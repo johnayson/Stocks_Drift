@@ -1,10 +1,12 @@
 import json
 import requests
+import configparser
 
-with open('/Users/~/Desktop/projects/data_eng/stocks/config/config.json') as data_file:
-                data = json.load(data_file)
+config = configparser.ConfigParser()
+config.read('config.env')
 
-API_KEY = data["API_KEY"]
+
+API_KEY = config.get('CONFIG','API_KEY')
 
 #Get basic Stock info
 def get_stock_info(ticker,api):
