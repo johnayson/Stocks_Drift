@@ -5,8 +5,8 @@ import configparser
 config = configparser.ConfigParser()
 config.read('config.env')
 
-
 API_KEY = config.get('CONFIG','API_KEY')
+
 
 #Get basic Stock info
 def get_stock_info(ticker,api):
@@ -22,6 +22,6 @@ def get_stock_current_price(ticker,api):
 
 
 #main
-#get_stock_info("AAPL", API_KEY)
+get_stock_info("AAPL", API_KEY)
 get_stock_current_price("AAPL",API_KEY)
 
